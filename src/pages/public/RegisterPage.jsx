@@ -9,7 +9,7 @@ export const RegisterPage = () => {
 
     const onSubmit = async (data) => {
         try {
-            // ✅ Llamamos al servicio con los 3 parámetros necesarios
+            // Llamamos al servicio con los 3 parámetros necesarios
             await authService.register(data.email, data.password, data.nombreCompleto);
             toast.success('Usuario registrado correctamente');
             navigate('/login');
@@ -29,7 +29,7 @@ export const RegisterPage = () => {
                         type='text'
                         {...register('nombreCompleto', { required: 'El nombre es obligatorio' })}
                         className='w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none'
-                        placeholder='Diego Azcarategui'
+                        placeholder='Nombre Completo'
                     />
                     {errors.nombreCompleto && <p className='text-red-500 text-sm'>{errors.nombreCompleto.message}</p>}
                 </div>
@@ -40,7 +40,7 @@ export const RegisterPage = () => {
                         type='email'
                         {...register('email', { required: 'Email obligatorio' })}
                         className='w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none'
-                        placeholder='diego@duoc.cl'
+                        placeholder='usuario@correo.cl'
                     />
                 </div>
 

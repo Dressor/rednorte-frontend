@@ -11,12 +11,12 @@ export const LoginPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      // ✅ Aquí recibimos el objeto y usamos redirectUrl
+      // Aquí recibimos el objeto y usamos redirectUrl
       const response = await login(data.email, data.password);
       
       toast.success('Bienvenido');
       
-      // ✅ Usamos la URL que mandó el backend
+      // Usamos la URL que mandó el backend
       if (response && response.redirectUrl) {
         navigate(response.redirectUrl);
       } else {
